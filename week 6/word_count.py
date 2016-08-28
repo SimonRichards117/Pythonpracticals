@@ -5,7 +5,6 @@ Created by simon richards on 29/8/16
 """
 
 word_count = {}
-LONGEST_WORD = 0
 
 text = input("Text: ").lower().split()
 
@@ -14,8 +13,7 @@ for word in text:
         word_count[word] += 1
     else:
         word_count[word] = 1
-    if len(word) > LONGEST_WORD:
-        LONGEST_WORD = len(word)
 
+longest_word_length = max(len(word) for word in word_count)
 for word in sorted(word_count):
-    print("{:{}} : {}".format(word, LONGEST_WORD, word_count[word]))
+    print("{:{}} : {}".format(word, longest_word_length, word_count[word]))
