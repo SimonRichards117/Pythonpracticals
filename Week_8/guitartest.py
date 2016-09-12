@@ -14,8 +14,7 @@ while guitar_name != "":
     guitar = Guitar(guitar_name, guitar_year, guitar_cost)
     list_of_guitars.append(guitar)
     print(guitar, " Added")
-    guitar_name = input("""My Guitars!
-    name: """)
+    guitar_name = input("name:")
 
 list_of_guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
 list_of_guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))

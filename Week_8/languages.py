@@ -10,5 +10,5 @@ print(vb)
 
 programming_languages = [ruby, python, vb]
 for language in programming_languages:
-    if language.typing == "Dynamic":
+    if language.is_dynamic():
         print(language.name)
