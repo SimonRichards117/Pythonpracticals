@@ -1,4 +1,4 @@
-from Week_8.guitar import Guitar
+from week_8.guitar import Guitar
 
 # guitar1 = Guitar("Gibson L-5 CES", 1922, 16035.4)
 # guitar2 = Guitar("Gibson L-5 CES", 2011, 16035.4)

@@ -3,7 +3,7 @@ CP1404/CP5632 Practical
 Client code to use the Car class
 Note that the import has a folder (module) in it.
 """
-from Week_8.car import Car
+from week_8.car import Car
 
 
 def main():
