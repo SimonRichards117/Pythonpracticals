@@ -1,4 +1,4 @@
-from Week_8.programminglanguage import ProgrammingLanguage
+from week_8.programminglanguage import ProgrammingLanguage
 
 ruby = ProgrammingLanguage("Ruby", "Dynamic", True, 1995)
 python = ProgrammingLanguage("Python", "Dynamic", True, 1991)
