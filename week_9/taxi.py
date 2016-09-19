@@ -100,11 +100,60 @@ class SilverServiceTaxi(Taxi):
 # prius_1.drive(100)
 # print(prius_1, prius_1.get_fare())
 
-crapbox = UnreliableCar("Missan Crapbox", 100, 50)
-crapbox.drive(100)
-print(crapbox)
+# crapbox = UnreliableCar("Missan Crapbox", 100, 50)
+# crapbox.drive(100)
+# print(crapbox)
+#
+# rich_car = SilverServiceTaxi("Rich Bitch", 100, 2)
+# rich_car.drive(10)
+# print(rich_car.get_fare())
 
-rich_car = SilverServiceTaxi("Rich Bitch", 100, 2)
-rich_car.drive(10)
-print(rich_car.get_fare())
+limo = SilverServiceTaxi("Limo", 100, 2)
+prius = Taxi("Prius", 100)
+hummer = Taxi("Hummer", 200)
 
+taxis = [limo, prius, hummer]
+
+def taxi_simulator():
+    print("Let's Drive!")
+    print("q)uit, c)hoose taxi, d)rive")
+    menu_choice = input(">>>")
+    total_bill = 0.0
+    current_taxi = taxis[0]
+    while menu_choice != 'q':
+        if menu_choice == 'c':
+            taxi_choice = choose_taxi()
+            current_taxi = taxis[taxi_choice]
+        elif menu_choice == 'd':
+            drive_cost = drive_taxi(current_taxi)
+            total_bill += drive_cost
+        else:
+            print("Invalid Input")
+        print("Bill to date: ${:.2f}".format(total_bill))
+        print("q)uit, c)hoose taxi, d)rive")
+        menu_choice = input(">>>")
+    print("Bill to date: ${:.2f}".format(total_bill))
+    counter = 0
+    for taxi in taxis:
+        print("{} - {}".format(counter, taxi))
+        counter += 1
+
+
+def choose_taxi():
+    counter = 0
+    for taxi in taxis:
+        print("{} - {}".format(counter, taxi))
+        counter += 1
+    taxi_choice = int(input("Choose Taxi: "))
+    return taxi_choice
+
+
+def drive_taxi(current_taxi):
+        drive_distance = int(input("Drive how far? "))
+        current_taxi.start_fare()
+        current_taxi.drive(drive_distance)
+        print("That trip cost you: {}".format(current_taxi.get_fare()))
+        trip_cost = current_taxi.get_fare()
+        return trip_cost
+
+taxi_simulator()
